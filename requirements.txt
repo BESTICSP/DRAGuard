@@ -1,0 +1,68 @@
+# DRA-Guard reproduction dependencies
+# Reference environment: Python 3.10, Linux x86_64, NVIDIA CUDA 12.1+
+# Recommended clean install:
+#   conda create -n dra-guard python=3.10.20 -y
+#   conda activate dra-guard
+#   python -m pip install --upgrade pip
+#   python -m pip install -r requirements.txt
+
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+# PyTorch / CUDA stack used by the reference environment
+torch==2.2.0
+torchvision==0.17.0
+
+# Official prebuilt wheel matching Linux x86_64, CPython 3.10 and PyTorch 2.2.
+# The cu122 build is compatible with the reference PyTorch CUDA 12.x stack.
+flash-attn @ https://github.com/Dao-AILab/flash-attention/releases/download/v2.5.5/flash_attn-2.5.5%2Bcu122torch2.2cxx11abiFALSE-cp310-cp310-linux_x86_64.whl#sha256=3fc5d8813904d32cfc77aa4b88d40169dbc12053edb6ee0f1d94159527d05ab0
+
+# OpenVLA / Prismatic inference
+accelerate==1.13.0
+draccus==0.8.0
+einops==0.8.2
+huggingface-hub==0.36.2
+json-numpy==2.1.1
+jsonlines==4.0.0
+peft==0.11.1
+protobuf==4.25.9
+rich==15.0.0
+safetensors==0.7.0
+timm==0.9.10
+tokenizers==0.19.1
+transformers==4.40.1
+
+# DRA-Guard: prototype construction, DRL/PDV, RAR training and evaluation
+numpy==1.26.4
+pillow==12.2.0
+opencv-python==4.13.0.92
+imageio==2.37.3
+imageio-ffmpeg==0.6.0
+matplotlib==3.10.9
+scikit-learn==1.7.2
+scipy==1.15.3
+tensorflow==2.15.1
+tqdm==4.67.3
+
+# LIBERO simulation stack
+libero @ git+https://github.com/Lifelong-Robot-Learning/LIBERO.git@8f1084e3132a39270c3a13ebe37270a43ece2a01
+bddl==1.0.1
+cloudpickle==3.1.2
+easydict==1.13
+egl-probe==1.0.2
+future==1.0.0
+gym==0.26.2
+hydra-core==1.3.2
+mujoco==3.6.0
+omegaconf==2.3.0
+PyOpenGL==3.1.10
+PyYAML==6.0.3
+robomimic==0.2.0
+robosuite==1.4.1
+trimesh==4.11.4
+
+# Installation tooling needed by the pinned Git/wheel dependencies
+ninja==1.13.0
+packaging==26.0
+psutil==7.2.2
+setuptools==80.10.2
+wheel==0.46.3

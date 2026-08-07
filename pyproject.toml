@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dra-guard"
+version = "0.1.0"
+description = "DRA-Guard experimental implementation for VLA adversarial patch defense"
+requires-python = ">=3.10,<3.11"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["analysis*", "experiments*", "prismatic*"]
+
+[tool.setuptools.package-data]
+prismatic = ["py.typed"]
