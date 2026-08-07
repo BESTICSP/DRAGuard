@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments and editor state
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+
+# Runtime data, downloaded checkpoints, and generated outputs
+data/**
+!data/**/
+!data/**/.gitkeep
+!data/prototype_bank/prototypes/*.pt
+!data/adversarial_patches/**/patch.pt
+models/**
+!models/**/
+!models/**/.gitkeep
+outputs/**
+!outputs/
+!outputs/.gitkeep
+rollouts/**
+!rollouts/
+!rollouts/.gitkeep
+!rollouts/libero_object/
+!rollouts/libero_object/physcial__targeted__T-dof1/
+!rollouts/libero_object/physcial__targeted__T-dof1/Task0_draguard.mp4
+!rollouts/libero_object/physcial__targeted__T-dof1/Task6_draguard.mp4
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# Internal repository-preparation notes
+PROJECT_AUDIT.md
